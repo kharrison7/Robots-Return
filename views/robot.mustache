@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mustache Activity</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+
+  </head>
+  <body>
+
+    <div class="container">
+
+      {{#robots}}
+        <ul class="robot-info">
+          <div class="top-row">
+              <img src="{{avatar}}" alt="">
+              <div class="right-of-pic">
+
+              <h1>{{name}}</h1>
+              {{#address.city}}
+                <p>{{address.city}},
+              {{/address.city}}
+              {{#address.country}}
+                <a href="/country/{{address.country}}">{{address.country}}</a>
+              {{/address.country}}
+               |
+              {{#job}}
+                {{job}}, {{company}}
+              {{/job}}
+              {{^job}}
+                <span>Available for hire</span></p>
+              {{/job}}
+              <p>{{email}} | {{phone}}</p>
+              </div>
+            </div>
+            <div class="bottom-row">
+              <table>
+              <tr class="upper">
+                {{#university}}
+                  <td class="bold">Education </td>
+                  <td>{{university}}</td>
+                {{/university}}
+              </tr>
+              <tr class="">
+                <td class="bold">Skills </td>
+                <td>{{#skills}}
+                  <li><a href="/skills/{{.}}">{{.}}</a></li>
+                {{/skills}}</td>
+              </tr>
+            </table>
+          </div>
+        </ul>
+        {{/robots}}
+
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Mustache Activity</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+
+  </head>
+  <body>
+
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <!-- TODO write your HTML/Mustache here -->
+          <h1><a href="/">Robot LinkedIn</a></h1>
+          <div class="links">
+            <a href="/looking">Looking for work</a>
+            <a href="/employed">Currently employed</a>
+          </div>
+          <ul class="list-of-robots">
+            {{#robots}}
+              <div class="robot">
+                <img src="{{avatar}}" alt="">
+                <h2><a href="http://localhost:3000/index/{{id}}">{{name}}</a></h2>
+                {{#job}}
+                  <p>{{job}}</p>
+                  <p>{{company}}</p>
+                {{/job}}
+                {{^job}}
+                  <span>Available for hire</span>
+                {{/job}}
+              </div>
+            {{/robots}}
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  </body>
+</html>

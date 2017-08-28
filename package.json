@@ -1,0 +1,24 @@
+{
+  "name": "mystery-word",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.17.2",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
+    "express-validation": "^1.0.2",
+    "express-validator": "^4.0.0",
+    "mongodb": "^2.2.31",
+    "morgan": "^1.8.2",
+    "mustache-express": "^1.2.5"
+  },
+  "devDependencies": {},
+  "description": ""
+}
