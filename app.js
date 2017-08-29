@@ -64,6 +64,17 @@ const mongodb = require('mongodb');
 const MongoClient = mongodb.MongoClient;
 const mongoURL = 'mongodb://localhost:27017/newdb';
 
+let assert = require('assert');
+
+// Use connect method to connect to the server
+MongoClient.connect(mongoURL, function(err, db) {
+  assert.equal(null, err);
+  console.log("Connected successfully to mongodb server");
+  db.close();
+});
+
+
+
 // Example code from class.
 // app.use('/', function (req, res) {
 //   MongoClient.connect(mongoURL, function (err, db) {
