@@ -85,15 +85,20 @@ MongoClient.connect(mongoURL, function(err, db) {
 //   })
 // })
 
+// This makes the initial index of robots.
 app.get('/', function (req, res) {
+  // connects to the mongodb using the const info above.
   MongoClient.connect(mongoURL, function (err, db) {
+    // connects to the robots collection.
     const robots = db.collection('robots');
+    // finds all objects in robots
     robots.find({}).toArray(function (err, docs) {
       res.render("index", {robots: docs})
     })
   })
 })
 
+// This finds a robot by id.
 app.get('/index/:id', function(req, res){
   MongoClient.connect(mongoURL, function (err, db) {
     const robots = db.collection('robots');
@@ -104,6 +109,7 @@ app.get('/index/:id', function(req, res){
   })
 })
 
+// This finds robots in a given country by going to the url.
 app.get('/country/:country', function(req, res){
   MongoClient.connect(mongoURL, function (err, db) {
     const robots = db.collection('robots');
@@ -113,6 +119,7 @@ app.get('/country/:country', function(req, res){
   })
 })
 
+// This finds robots with a given skill by going to the url.
 app.get('/skills/:skill', function(req, res){
   MongoClient.connect(mongoURL, function (err, db) {
     const robots = db.collection('robots');

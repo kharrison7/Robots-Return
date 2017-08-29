@@ -9,6 +9,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "bluebird": "^3.5.0",
     "body-parser": "^1.17.2",
     "cookie-parser": "^1.4.3",
     "express": "^4.15.4",
@@ -16,6 +17,7 @@
     "express-validation": "^1.0.2",
     "express-validator": "^4.0.0",
     "mongodb": "^2.2.31",
+    "mongoose": "^4.11.9",
     "morgan": "^1.8.2",
     "mustache-express": "^1.2.5"
   },
